@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.camila.DTO.BookDTO;
+import cl.camila.DTO.MessageDTO;
 import cl.camila.model.Book;
 import cl.camila.service.BookService;
 
@@ -33,7 +34,7 @@ public class BookController {
 	
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
-	public String save(@RequestBody BookDTO bookDTO) {
+	public MessageDTO save(@RequestBody BookDTO bookDTO) {
 		return bookService.save(bookDTO);
 	}
 	
